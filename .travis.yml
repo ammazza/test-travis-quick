@@ -8,9 +8,9 @@ python: "3.6"
 #   - var1
 #   - var2
 
-stages:
-- test
-- publish
+# stages:
+# - test
+# - publish
 
 # Pipeline stages.
 jobs:
