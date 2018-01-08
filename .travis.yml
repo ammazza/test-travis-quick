@@ -1,0 +1,22 @@
+# We specify a supported language with minimal installation footprint.
+language: python
+python: "3.6"
+
+# Environment variables (e.g. encrypted credentials).
+# env:
+#   global:
+#   - var1
+#   - var2
+
+# Pipeline stages.
+jobs:
+  include:
+  - stage: test
+    if: branch IN (master, devel) OR branch =~ ^version-
+    script:
+    - echo "I'm testing..."
+  - stage: publish
+    if: branch IN (master, devel) OR branch =~ ^version-
+    script:
+    - echo "I'm publishing..."
+
